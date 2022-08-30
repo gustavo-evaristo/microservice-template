@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "allowJs": true,
+    "strict": false,
+    "outDir": "./build",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "paths": {
+      "~/*": ["./src/*"],
+      // "~/database": ["./src/database/index"],
+      // "~/modules/*": ["./src/modules/*"],
+      // "~/resolvers/*": ["./src/resolvers/*"],
+    },
+  },
+
+  "include": ["src/**/*.ts", "src/__tests__/jest.setup.ts"],
+
+  "exclude": ["node_modules", "build", "coverage"]
+}

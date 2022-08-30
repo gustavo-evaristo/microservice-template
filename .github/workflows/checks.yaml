@@ -1,0 +1,29 @@
+name: Lint
+on:
+  push:
+    branches: [ master, release, develop ]
+
+  pull_request:
+    branches: [ master, release, develop  ]
+
+jobs:
+  code:
+    name: Lint code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 16
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+
+      - name: Install all dependencies
+        uses: Borales/actions-yarn@v3.0.0
+
+      - name: Run ESLint
+        run: yarn lint
+
+      - name: Run Prettier
+        run: yarn pretty
